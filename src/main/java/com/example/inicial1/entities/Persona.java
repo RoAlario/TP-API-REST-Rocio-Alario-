@@ -36,8 +36,8 @@ public class Persona implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio;
-
-    @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+    
+    @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Libro> libros;
 }
 
